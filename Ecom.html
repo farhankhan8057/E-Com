@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thapa E-Commerce</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8f8f8;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 98%;
+      z-index: 1000;
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+
+    .slider {
+      margin-top: 13px;
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      width: 500%;
+      height: 100%;
+      animation: slide 20s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0%   { margin-left: 0; }
+      20%  { margin-left: 0; }
+      25%  { margin-left: -100%; }
+      45%  { margin-left: -100%; }
+      50%  { margin-left: -200%; }
+      70%  { margin-left: -200%; }
+      75%  { margin-left: -300%; }
+      95%  { margin-left: -300%; }
+      100% { margin-left: -400%; }
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid #ddd;
+      margin: 10px;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+    }
+
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+
+    .product button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .product button:hover {
+      background: #218838;
+    }
+
+    #cart-count {
+      font-weight: bold;
+      color: yellow;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+  .category-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px 10px;
+  background: #fff;
+  margin-top: 60px; /* matches header height */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  width: 80px;
+  cursor: pointer;
+}
+
+.category img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+
+.category p {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+.scrolling-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #9f2089; /* nice yellow background */
+  color: #000;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 60px; /* match the height of your fixed header */
+  z-index: 999;
+}
+
+.scrolling-text p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scrollText 15s linear infinite;
+  font-weight: bold;
+  font-size: 18px;
+  color:rgb(255, 255, 255);
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+
+}
+ .category:hover img {
+  transform: scale(1.3);
+  transition: transform 0.3s ease;
+}
+.features-section {
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  gap: 40px;
+  margin-top: 5px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  color: #333;
+  cursor: default;
+  width: 120px;
+}
+
+.feature img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+  object-fit: contain;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; background: #333; color: white;">
+  <img src="logo.png" style="width: 37.5px; opacity: 0.5;">
+ <h1 style="    margin-left: 25px;">Thapa E-Shop</h1>
+  <div style="display: flex; align-items: center; gap: 20px; flex-grow: 1; justify-content: center;">
+    <input type="text" placeholder="Search products..." style="    padding: 6px 10px;
+    border-radius: 9px;
+    order: none;
+    outline: none;
+    height: 29px;
+    width: 391px;">
+  </div>
+
+  <nav style="margin-left: 7em;">
+    <span>Cart: <span id="cart-count">0</span></span>
+    <a href="#">Home</a>
+    <a href="https://mc-zbtgvdlwk4v8ynz-yh08qzczy.pub.sfmc-content.com/3j0bcjqv0je">Contact</a>
+  </nav>
+</header>
+
+<div class="scrolling-text">
+  <p>Welcome to the Thapa`s Online Store</p>
+</div>
+
+
+<section class="category-section">
+  <div class="category">
+    <img src="Home.jpg" alt="Home">
+    <p>Home</p>
+  </div>
+  <div class="category">
+    <img src="Mobile.webp" alt="Mobile">
+    <p>Mobiles</p>
+  </div>
+  <div class="category">
+    <img src="Electronics.jpg" alt="Electronics">
+    <p>Electronics</p>
+  </div>
+  <div class="category">
+    <img src="clouth.jpg" alt="Clothes">
+    <p>Clothes</p>
+  </div>
+  <div class="category">
+    <img src="Shoes.jpg" alt="Shoes">
+    <p>Shoes</p>
+  </div>
+  <div class="category">
+    <img src="Gifts.jpg" alt="Gifts">
+    <p>Gifts</p>
+  </div>
+  <div class="category">
+    <img src="Beauty.jpg" alt="Beauty">
+    <p>Beauty</p>
+  </div>
+  <div class="category">
+    <img src="Toys.jpg" alt="Toys">
+    <p>Toys</p>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="feature">
+    <img src="Return.png" alt="7 Days Easy Return">
+    <p>7 Days Easy Return</p>
+  </div>
+  <div class="feature">
+    <img src="Cash.png" alt="Cash on Delivery">
+    <p>Cash on Delivery</p>
+  </div>
+  <div class="feature">
+    <img src="Lowest.png" alt="Lowest Price">
+    <p>Lowest Price</p>
+  </div>
+</section>
+
+
+
+
+  <!-- 🔄 Slider Start -->
+
+  <div class="slider">
+    <div class="slides">
+      <img src="sales2.jpg" alt="Sale 2">
+      <img src="sales3.webp" alt="Sale 3">
+      <img src="Banner1.jpg" alt="Sale 4">
+       <img src="Banner2.jpg" alt="Sale 4">
+      <img src="Banner3.jpg" alt="Sale 4">
+
+    </div>
+  </div>
+  <!-- 🔄 Slider End -->
+
+  <section class="products">
+    <div class="product">
+      <a href ="https://www.amazon.in/FunBlast-Table-Lamp-Rechargeable-Sharpener/dp/B0CLVLZJ6R">
+      <img src="lampe.webp" alt="Product 1">
+      <h3>Burger Lampe</h3>
+      </a>
+      <p>$19.99</p>
+    <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <a href ="https://www.meesho.com/beautiful-travel-hand-fan-with-led-light-for-kids-with-stand-charging-cable-cream-white/p/806mgu">
+      <img src="fanlampe.jpg" alt="Product 3">
+      <h3>Fan Lampe</h3>
+      </a>
+      <p>$14.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+        <div class="product">
+      <a href="https://www.meesho.com/keesor-men-tshirtmen-printed-round-neck-tshirtmen-graphic-print-tshirt/p/8bh73i" target="_blank">
+      <img src="tshirts.webp" alt="Product 2">
+      <h3>T-shirts</h3>
+      </a>
+      <p>$24.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <a href ="https://www.meesho.com/wooden-beautiful-tortoise-toy-for-kids-and-home/p/6miqeg">
+      <img src="tortoise.jpg" alt="Product 4">
+      <h3>Tortoise</h3>
+      <a/>
+      <p>$29.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+  </section>
+   <section class="products">
+    <div class="product">
+      <a href ="https://www.amazon.in/FunBlast-Table-Lamp-Rechargeable-Sharpener/dp/B0CLVLZJ6R">
+      <img src="lampe.webp" alt="Product 1">
+      <h3>Burger Lampe</h3>
+      </a>
+      <p>$19.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <a href ="https://www.meesho.com/beautiful-travel-hand-fan-with-led-light-for-kids-with-stand-charging-cable-cream-white/p/806mgu">
+      <img src="fanlampe.jpg" alt="Product 3">
+      <h3>Fan Lampe</h3>
+      </a>
+      <p>$14.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+        <div class="product">
+      <a href="https://www.meesho.com/keesor-men-tshirtmen-printed-round-neck-tshirtmen-graphic-print-tshirt/p/8bh73i" target="_blank">
+      <img src="tshirts.webp" alt="Product 2">
+      <h3>T-shirts</h3>
+      </a>
+      <p>$24.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <a href ="https://www.meesho.com/wooden-beautiful-tortoise-toy-for-kids-and-home/p/6miqeg">
+      <img src="tortoise.jpg" alt="Product 4">
+      <h3>Tortoise</h3>
+      <a/>
+      <p>$29.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+  </section>
+
+   <section class="products">
+        <div class="product">
+      <a href ="https://www.meesho.com/beautiful-travel-hand-fan-with-led-light-for-kids-with-stand-charging-cable-cream-white/p/806mgu">
+      <img src="fanlampe.jpg" alt="Product 3">
+      <h3>Fan Lampe</h3>
+      </a>
+      <p>$14.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <a href ="https://www.amazon.in/FunBlast-Table-Lamp-Rechargeable-Sharpener/dp/B0CLVLZJ6R">
+      <img src="lampe.webp" alt="Product 1">
+      <h3>Burger Lampe</h3>
+      </a>
+      <p>$19.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <a href="https://www.meesho.com/keesor-men-tshirtmen-printed-round-neck-tshirtmen-graphic-print-tshirt/p/8bh73i" target="_blank">
+      <img src="tshirts.webp" alt="Product 2">
+      <h3>T-shirts</h3>
+      </a>
+      <p>$24.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <a href ="https://www.meesho.com/wooden-beautiful-tortoise-toy-for-kids-and-home/p/6miqeg">
+      <img src="tortoise.jpg" alt="Product 4">
+      <h3>Tortoise</h3>
+      <a/>
+      <p>$29.99</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 My E-Shop. All rights reserved.
+  </footer>
+
+  <script>
+    let cartCount = 0;
+    function addToCart() {
+      cartCount++;
+      document.getElementById('cart-count').innerText = cartCount;
+    }
+  </script>
+
+</body>
+</html>
