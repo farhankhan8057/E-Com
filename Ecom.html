@@ -211,27 +211,86 @@
   margin-bottom: 8px;
   object-fit: contain;
 }
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  font-size: 14px;
-}
+    /* Header */
+    .header {
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+    }
 
-.nav-links a, .nav-links span {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-}
+    /* Profile icon */
+    .profile-container {
+      position: relative;
+      cursor: pointer;
+    }
 
-.nav-links a:hover {
-  text-decoration: underline;
-}
-.profile-icon {
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
-}
+    .profile-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png') no-repeat center center;
+      background-size: cover;
+    }
+
+    /* Dropdown */
+    .profile-dropdown {
+      position: absolute;
+      right: 0;
+      top: 45px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 220px;
+      display: none;
+      z-index: 1000;
+    }
+
+    .profile-container:hover .profile-dropdown {
+      display: block;
+    }
+
+    .profile-dropdown p {
+      margin: 0;
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      font-weight: bold;
+    }
+
+    .profile-dropdown a {
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: #333;
+      border-bottom: 1px solid #f1f1f1;
+    }
+
+    .profile-dropdown a:hover {
+      background-color: #f9f9f9;
+    }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+  }
+
+  .nav-links a, .nav-links span {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+  .profile-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+
 
 
   </style>
@@ -265,6 +324,7 @@
     </div>
   </div>
 </nav>
+
 </header>
 
 <div class="scrolling-text">
@@ -286,7 +346,7 @@
     <p>Electronics</p>
   </div>
   <div class="category">
-    <img src="Clouth.jpg" alt="Clothes">
+    <img src="clouth.jpg" alt="Clothes">
     <p>Clothes</p>
   </div>
   <div class="category">
@@ -329,11 +389,11 @@
 
   <div class="slider">
     <div class="slides">
-      <img src="sales2.jpg" alt="Sale 1">
-      <img src="sales3.webp" alt="Sale 2">
-      <img src="Banner1.jpg" alt="Sale 3">
+      <img src="sales2.jpg" alt="Sale 2">
+      <img src="sales3.webp" alt="Sale 3">
+      <img src="Banner1.jpg" alt="Sale 4">
        <img src="Banner2.jpg" alt="Sale 4">
-      <img src="Banner3.jpg" alt="Sale 5">
+      <img src="Banner3.jpg" alt="Sale 4">
 
     </div>
   </div>
@@ -443,6 +503,7 @@
       <button onclick="addToCart()">Add to Cart</button>
     </div>
   </section>
+<!-- Footer Start -->
 <footer style="background-color: #f8f8f8; padding: 40px 20px; font-family: Arial, sans-serif; font-size: 14px; color: #333;">
   <div style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: auto;">
 
@@ -492,6 +553,8 @@
     © 2025 Thapa's-like Clone. All Rights Reserved.
   </div>
 </footer>
+<!-- Footer End -->
+
   <footer>
     &copy; 2025 My E-Shop. All rights reserved.
   </footer>
