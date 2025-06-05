@@ -211,7 +211,27 @@
   margin-bottom: 8px;
   object-fit: contain;
 }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
 
+.nav-links a, .nav-links span {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+.profile-icon {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+}
 
 
   </style>
@@ -230,11 +250,21 @@
     width: 391px;">
   </div>
 
-  <nav style="margin-left: 7em;">
-    <span>Cart: <span id="cart-count">0</span></span>
-    <a href="#">Home</a>
-    <a href="https://mc-zbtgvdlwk4v8ynz-yh08qzczy.pub.sfmc-content.com/3j0bcjqv0je">Contact</a>
-  </nav>
+  <nav class="nav-links">
+  <a href="#">Home</a>
+  <a href="https://mc-zbtgvdlwk4v8ynz-yh08qzczy.pub.sfmc-content.com/3j0bcjqv0je">Contact</a>
+  <span>Cart: <span id="cart-count">0</span></span>
+
+  <div class="profile-container">
+    <div class="profile-icon"></div>
+    <div class="profile-dropdown">
+      <p style ="color:Black">Hello User<br><small style ="color:Black">To access your Thapa's account</small></p>
+      <a href="#" style ="color:Black">Sign Up</a>
+      <a href="#"style ="color:Black">My Orders</a>
+      <a href="#" style="color: red;">Delete Account</a>
+    </div>
+  </div>
+</nav>
 </header>
 
 <div class="scrolling-text">
